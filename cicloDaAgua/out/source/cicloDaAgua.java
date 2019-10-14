@@ -16,15 +16,15 @@ public class cicloDaAgua extends PApplet {
 
 Telas telasAplicacao = new Telas();//objeto telas que faz o "desenho" das telas
 Verificacao verificacaoBotoes = new Verificacao();//objeto que vai fazer as verificações dos botões
+
 boolean testeBotaoInicio,testeBotaoSobre,testeBotaoDireitos;//que guardam o estado do botão em relação ao mouse 
-boolean testeBotaoPequenoCilco,testeBotaoGrandeCiclo;//guardam qual ciclo será mostrado
-boolean testeBotaoDeVoltarPequenoCiclo;
+boolean testeBotaoPequenoCilco,testeBotaoGrandeCiclo;//guardam o estado do botão quando o mouse está sobre alguma das opções
+boolean testeBotaoDeVoltarPequenoCiclo,testeBotaoDeVoltarGrandeCiclo,testeBotaoDeVoltarEscolha;//gurada o estado do botão caso o mouse esteja sobre ele 
 int alteracaoTelas;//variavel responsavel pela alteração das telas 
-//
+
 //exemplo mouse sobre um botao logo o estado será true se não será false
 public void setup() {
     
-    testeBotaoInicio =false;
     alteracaoTelas = 0;   
 }
 
@@ -65,6 +65,8 @@ class Telas{
             opacidade(319,316,267,76);
         }else if(testeBotaoGrandeCiclo){
             opacidade(627,316,262,76);
+        }else if(testeBotaoDeVoltarEscolha){
+            opacidade(105,36,174,67);
         }
     }
 
@@ -77,6 +79,9 @@ class Telas{
 
     public void grandeCiclo(){
         imagemASerExibida("imagens/grande_ciclo.png");
+         if(testeBotaoDeVoltarGrandeCiclo){
+            opacidade(80,28,223,64);
+        }
     }
    
 }
@@ -118,9 +123,16 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(84,18,264,75)&&alteracaoTelas==2){//testa se o mouse está sobre o bota de voltar
             testeBotaoDeVoltarPequenoCiclo = true;
             cursor(HAND);
-        }else{
+        }else if(testeLogicoDosBotoes(80,28,223,64)&&alteracaoTelas==3){//teste se o mouse está sobre o botão de voltar grande ciclo
+            testeBotaoDeVoltarGrandeCiclo = true;
+            cursor(HAND);
+        }else if(testeLogicoDosBotoes(105,36,174,67)&&alteracaoTelas==1){
+            testeBotaoDeVoltarEscolha = true;
+            cursor(HAND);
+        }
+        else{
             testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
-            testeBotaoDeVoltarPequenoCiclo = false;
+            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo=testeBotaoDeVoltarEscolha  =false;
             cursor(ARROW);
         }
 
@@ -146,8 +158,11 @@ class Verificacao{
         }else if(testeBotaoGrandeCiclo){
             alteracaoTelas = 3;
         }else if(testeBotaoDeVoltarPequenoCiclo){
-            alteracaoTelas -= 1;//diminui 1 para que volte para a pagina aterior
-
+            alteracaoTelas -= 1;//diminui 1 para que volte para a escolha
+        }else if(testeBotaoDeVoltarGrandeCiclo){
+            alteracaoTelas -=2 ;//diminui 2 para que volte para a esolha
+        }else if(testeBotaoDeVoltarEscolha){
+            alteracaoTelas -= 1;
         }
     }
     

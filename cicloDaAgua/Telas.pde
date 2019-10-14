@@ -25,6 +25,8 @@ class Telas{
             opacidade(319,316,267,76);
         }else if(testeBotaoGrandeCiclo){
             opacidade(627,316,262,76);
+        }else if(testeBotaoDeVoltarEscolha){
+            opacidade(105,36,174,67);
         }
     }
 
@@ -37,6 +39,9 @@ class Telas{
 
     void grandeCiclo(){
         imagemASerExibida("imagens/grande_ciclo.png");
+         if(testeBotaoDeVoltarGrandeCiclo){
+            opacidade(80,28,223,64);
+        }
     }
    
 }

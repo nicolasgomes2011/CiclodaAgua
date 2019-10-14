@@ -36,9 +36,16 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(84,18,264,75)&&alteracaoTelas==2){//testa se o mouse está sobre o bota de voltar
             testeBotaoDeVoltarPequenoCiclo = true;
             cursor(HAND);
-        }else{
+        }else if(testeLogicoDosBotoes(80,28,223,64)&&alteracaoTelas==3){//teste se o mouse está sobre o botão de voltar grande ciclo
+            testeBotaoDeVoltarGrandeCiclo = true;
+            cursor(HAND);
+        }else if(testeLogicoDosBotoes(105,36,174,67)&&alteracaoTelas==1){
+            testeBotaoDeVoltarEscolha = true;
+            cursor(HAND);
+        }
+        else{
             testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
-            testeBotaoDeVoltarPequenoCiclo = false;
+            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo=testeBotaoDeVoltarEscolha  =false;
             cursor(ARROW);
         }
 
@@ -64,8 +71,11 @@ class Verificacao{
         }else if(testeBotaoGrandeCiclo){
             alteracaoTelas = 3;
         }else if(testeBotaoDeVoltarPequenoCiclo){
-            alteracaoTelas -= 1;//diminui 1 para que volte para a pagina aterior
-
+            alteracaoTelas -= 1;//diminui 1 para que volte para a escolha
+        }else if(testeBotaoDeVoltarGrandeCiclo){
+            alteracaoTelas -=2 ;//diminui 2 para que volte para a esolha
+        }else if(testeBotaoDeVoltarEscolha){
+            alteracaoTelas -= 1;
         }
     }
     
