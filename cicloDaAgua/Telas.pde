@@ -43,5 +43,12 @@ class Telas{
             opacidade(80,28,223,64);
         }
     }
+
+    void sobre(){
+        imagemASerExibida("imagens/sobre.png");
+        if(testeBotaoDeVoltarSobre){
+            opacidade(105,37,174,63);
+        }
+    }
    
 }

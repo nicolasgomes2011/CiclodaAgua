@@ -19,7 +19,8 @@ Verificacao verificacaoBotoes = new Verificacao();//objeto que vai fazer as veri
 
 boolean testeBotaoInicio,testeBotaoSobre,testeBotaoDireitos;//que guardam o estado do botão em relação ao mouse 
 boolean testeBotaoPequenoCilco,testeBotaoGrandeCiclo;//guardam o estado do botão quando o mouse está sobre alguma das opções
-boolean testeBotaoDeVoltarPequenoCiclo,testeBotaoDeVoltarGrandeCiclo,testeBotaoDeVoltarEscolha;//gurada o estado do botão caso o mouse esteja sobre ele 
+boolean testeBotaoDeVoltarPequenoCiclo,testeBotaoDeVoltarGrandeCiclo,testeBotaoDeVoltarEscolha;//guarda o estado do botão caso o mouse esteja sobre ele 
+boolean testeBotaoDeVoltarSobre;//estado do botão de voltar da tela sobre
 int alteracaoTelas;//variavel responsavel pela alteração das telas 
 
 //exemplo mouse sobre um botao logo o estado será true se não será false
@@ -83,6 +84,13 @@ class Telas{
             opacidade(80,28,223,64);
         }
     }
+
+    public void sobre(){
+        imagemASerExibida("imagens/sobre.png");
+        if(testeBotaoDeVoltarSobre){
+            opacidade(105,37,174,63);
+        }
+    }
    
 }
 /*
@@ -129,10 +137,12 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(105,36,174,67)&&alteracaoTelas==1){
             testeBotaoDeVoltarEscolha = true;
             cursor(HAND);
-        }
-        else{
-            testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
-            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo=testeBotaoDeVoltarEscolha  =false;
+        }else if(testeLogicoDosBotoes(105,37,174,63)&&alteracaoTelas ==4){
+            testeBotaoDeVoltarSobre =true;
+            cursor(HAND);
+
+        }else{
+            desabilitarButtons();
             cursor(ARROW);
         }
 
@@ -147,23 +157,37 @@ class Verificacao{
             telasCiclos.pequenoCiclo();
         }else if(alteracaoTelas ==3){//caso seja 3 a tela do grande ciclo será mostrada
             telasCiclos.grandeCiclo();
+        }else if(alteracaoTelas ==4){
+            telasCiclos.sobre();
+
         }
     }
 
     public void testeMouseClicado(){//metodo chamando quando o mouse é clicado
         if(testeBotaoInicio){//se o mouse for clicado  e estiver sobre o botão de inicio ocorrera uma alteração para a tela do pequeno ciclo
             alteracaoTelas = 1;
+        }else if(testeBotaoSobre){
+            alteracaoTelas = 4;//4 será o valor para que a tela de sobre seja mostrado
         }else if(testeBotaoPequenoCilco){
             alteracaoTelas = 2; 
         }else if(testeBotaoGrandeCiclo){
             alteracaoTelas = 3;
         }else if(testeBotaoDeVoltarPequenoCiclo){
-            alteracaoTelas -= 1;//diminui 1 para que volte para a escolha
+            alteracaoTelas = 1;//seta 1 para que volte para a escolha
         }else if(testeBotaoDeVoltarGrandeCiclo){
-            alteracaoTelas -=2 ;//diminui 2 para que volte para a esolha
+            alteracaoTelas =1 ;//seta 1 para que volte para a esolha
+            print(testeBotaoDeVoltarGrandeCiclo);
         }else if(testeBotaoDeVoltarEscolha){
-            alteracaoTelas -= 1;
+            alteracaoTelas = 0;
+        }else if(testeBotaoDeVoltarSobre){
+            alteracaoTelas = 0;
         }
+        desabilitarButtons();//essa parte deve ficar para que cada atualização de click do mouse os botões sejam atuazlizados
+
+    }
+    public void desabilitarButtons(){
+        testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
+        testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
     }
     
     

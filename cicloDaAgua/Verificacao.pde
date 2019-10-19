@@ -42,10 +42,12 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(105,36,174,67)&&alteracaoTelas==1){
             testeBotaoDeVoltarEscolha = true;
             cursor(HAND);
-        }
-        else{
-            testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
-            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
+        }else if(testeLogicoDosBotoes(105,37,174,63)&&alteracaoTelas ==4){
+            testeBotaoDeVoltarSobre =true;
+            cursor(HAND);
+
+        }else{
+            desabilitarButtons();
             cursor(ARROW);
         }
 
@@ -60,12 +62,17 @@ class Verificacao{
             telasCiclos.pequenoCiclo();
         }else if(alteracaoTelas ==3){//caso seja 3 a tela do grande ciclo será mostrada
             telasCiclos.grandeCiclo();
+        }else if(alteracaoTelas ==4){
+            telasCiclos.sobre();
+
         }
     }
 
     void testeMouseClicado(){//metodo chamando quando o mouse é clicado
         if(testeBotaoInicio){//se o mouse for clicado  e estiver sobre o botão de inicio ocorrera uma alteração para a tela do pequeno ciclo
             alteracaoTelas = 1;
+        }else if(testeBotaoSobre){
+            alteracaoTelas = 4;//4 será o valor para que a tela de sobre seja mostrado
         }else if(testeBotaoPequenoCilco){
             alteracaoTelas = 2; 
         }else if(testeBotaoGrandeCiclo){
@@ -77,7 +84,15 @@ class Verificacao{
             print(testeBotaoDeVoltarGrandeCiclo);
         }else if(testeBotaoDeVoltarEscolha){
             alteracaoTelas = 0;
+        }else if(testeBotaoDeVoltarSobre){
+            alteracaoTelas = 0;
         }
+        desabilitarButtons();//essa parte deve ficar para que cada atualização de click do mouse os botões sejam atuazlizados
+
+    }
+    void desabilitarButtons(){
+        testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
+        testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
     }
     
     
