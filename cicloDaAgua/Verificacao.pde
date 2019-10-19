@@ -45,7 +45,7 @@ class Verificacao{
         }
         else{
             testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
-            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo=testeBotaoDeVoltarEscolha  =false;
+            testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
             cursor(ARROW);
         }
 
@@ -71,11 +71,12 @@ class Verificacao{
         }else if(testeBotaoGrandeCiclo){
             alteracaoTelas = 3;
         }else if(testeBotaoDeVoltarPequenoCiclo){
-            alteracaoTelas -= 1;//diminui 1 para que volte para a escolha
+            alteracaoTelas = 1;//diminui 1 para que volte para a escolha
         }else if(testeBotaoDeVoltarGrandeCiclo){
-            alteracaoTelas -=2 ;//diminui 2 para que volte para a esolha
+            alteracaoTelas =1 ;//diminui 2 para que volte para a esolha
+            print(testeBotaoDeVoltarGrandeCiclo);
         }else if(testeBotaoDeVoltarEscolha){
-            alteracaoTelas -= 1;
+            alteracaoTelas = 0;
         }
     }
     
