@@ -39,17 +39,21 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(80,28,223,64)&&alteracaoTelas==3){//teste se o mouse está sobre o botão de voltar grande ciclo
             testeBotaoDeVoltarGrandeCiclo = true;
             cursor(HAND);
-        }else if(testeLogicoDosBotoes(105,36,174,67)&&alteracaoTelas==1){
+        }else if(testeLogicoDosBotoes(105,36,174,67) && alteracaoTelas == 1){
             testeBotaoDeVoltarEscolha = true;
             cursor(HAND);
-        }else if(testeLogicoDosBotoes(105,37,174,63)&&alteracaoTelas ==4){
+        }else if(testeLogicoDosBotoes(105,37,174,63) && alteracaoTelas == 4){
             testeBotaoDeVoltarSobre =true;
             cursor(HAND);
 
+        }else if(testeLogicoDosBotoes(969,285,174,67) && alteracaoTelas == 0){
+             testeBotaoInicio = false;
+                
         }else{
             desabilitarButtons();
             cursor(ARROW);
         }
+        println("TELA: " + alteracaoTelas + " mouseX: "+ mouseX + " mouseY: " + mouseY);
 
     }
 

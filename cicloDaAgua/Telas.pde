@@ -50,5 +50,12 @@ class Telas{
             opacidade(105,37,174,63);
         }
     }
+    
+  //  void direito(){
+  //  imagemASerExibida("");
+  //if(testeBotaoDeVoltarDireito){
+  
+  //}
+  //  }
    
 }
