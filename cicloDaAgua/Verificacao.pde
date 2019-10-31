@@ -10,9 +10,17 @@ class Verificacao{
         if(mouseX >=posicaoBotaoX && mouseX <=posicaoBotaoX+width && mouseY >=posicaoBotaoY &&
         mouseY <= posicaoBotaoY+height){
             return true;//retorno caso o mouse esteja sobre um botao 
-
         }
         return false;
+    }
+    
+    boolean testeLogicoEllipseButtons(int x, int y, int diameter) {
+      float disX = x - mouseX;
+      float disY = y - mouseY;
+      if (sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
+          return true;
+      }
+       return false;
     }
     
     
@@ -46,14 +54,18 @@ class Verificacao{
             testeBotaoDeVoltarSobre =true;
             cursor(HAND);
 
-        }else if(testeLogicoDosBotoes(969,285,174,67) && alteracaoTelas == 0){
-             testeBotaoInicio = false;
-                
+        }else if(testeLogicoDosBotoes(958,218,175,63)){
+            testeBotaoDireitos = true;
+             testeBotaoSobre = false;
+            cursor(HAND);
+        }else if(testeLogicoEllipseButtons(320,300,60)&& alteracaoTelas == 2 ){//fazendo a verificação se o mouse está sobre o botão de action
+          testeBotaoDeActionPequenoCiclo_1 = true;
+          cursor(HAND);
         }else{
             desabilitarButtons();
             cursor(ARROW);
         }
-        println("TELA: " + alteracaoTelas + " mouseX: "+ mouseX + " mouseY: " + mouseY);
+        //println("TELA: " + alteracaoTelas + " mouseX: "+ mouseX + " mouseY: " + mouseY);
 
     }
 
@@ -97,6 +109,7 @@ class Verificacao{
     void desabilitarButtons(){
         testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
         testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
+        testeBotaoDireitos = testeBotaoDeActionPequenoCiclo_1 = testeBotaoDeActionPequenoCiclo_2 =false;
     }
     
     

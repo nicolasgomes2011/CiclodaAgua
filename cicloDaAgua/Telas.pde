@@ -1,5 +1,17 @@
 class Telas{
-    
+  
+  
+    void buttonsAction(float posX,float posY,float width_,float height_,boolean status){
+        //criando os botões de animação
+        fill(#675456);
+        ellipse(posX,posY,width_,height_);
+        if(status){
+          fill(#86010C);
+        }else{
+          fill(#FF0318);
+        }
+        ellipse(posX,posY,width_- 10,height_- 10);      
+    }
     void opacidade(int posX,int posY,int lar,int alt){//função que altera o opacidade do botão quando o mouse está sobre ele
         //a função deve receber as posições dos botões ,sua largura e altura
         noStroke();
@@ -17,6 +29,9 @@ class Telas{
             opacidade(958,61,175,63);                
         }else if(testeBotaoSobre){
             opacidade(958,140,175,63);
+        }else if(testeBotaoDireitos){
+            opacidade(958,218,175,63);
+        
         }
     }
     public void escolhaCiclo(){//tela para escolha dos ciclos
@@ -32,13 +47,18 @@ class Telas{
 
     void pequenoCiclo(){//tela do pequeno ciclo
         imagemASerExibida("imagens/pequeno_ciclo.png");
-         if(testeBotaoDeVoltarPequenoCiclo){
+        
+        buttonsAction(320,300,75,75,testeBotaoDeActionPequenoCiclo_1);//criando os botões das animações
+        buttonsAction(820,490,75,75,testeBotaoDeActionPequenoCiclo_2);
+        
+        if(testeBotaoDeVoltarPequenoCiclo){
             opacidade(84,18,264,75);
         }
     }
 
     void grandeCiclo(){
         imagemASerExibida("imagens/grande_ciclo.png");
+        
          if(testeBotaoDeVoltarGrandeCiclo){
             opacidade(80,28,223,64);
         }
