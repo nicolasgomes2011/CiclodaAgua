@@ -7,6 +7,7 @@ boolean testeBotaoPequenoCilco,testeBotaoGrandeCiclo;//guardam o estado do botã
 boolean testeBotaoDeVoltarPequenoCiclo,testeBotaoDeVoltarGrandeCiclo,testeBotaoDeVoltarEscolha;//guarda o estado do botão caso o mouse esteja sobre ele 
 boolean testeBotaoDeVoltarSobre, testeBotaoDeVoltarDireitos;//estado do botão de voltar da tela sobre
 boolean testeBotaoDeActionPequenoCiclo_1,testeBotaoDeActionPequenoCiclo_2;
+boolean animacoes_chuva;
 int alteracaoTelas;//variavel responsavel pela alteração das telas 
 
 //exemplo mouse sobre um botao logo o estado será true se não será false

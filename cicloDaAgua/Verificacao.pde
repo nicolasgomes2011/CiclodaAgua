@@ -61,6 +61,11 @@ class Verificacao{
         }else if(testeLogicoEllipseButtons(320,300,60)&& alteracaoTelas == 2 ){//fazendo a verificação se o mouse está sobre o botão de action
           testeBotaoDeActionPequenoCiclo_1 = true;
           cursor(HAND);
+        }else if(testeLogicoEllipseButtons(820,490,75)&& alteracaoTelas ==2){
+          testeBotaoDeActionPequenoCiclo_2 = true;
+          cursor(HAND);
+        
+        
         }else{
             desabilitarButtons();
             cursor(ARROW);
@@ -103,14 +108,22 @@ class Verificacao{
         }else if(testeBotaoDeVoltarSobre){
             alteracaoTelas = 0;
         }
+        testeDasAnimacoes();
         desabilitarButtons();//essa parte deve ficar para que cada atualização de click do mouse os botões sejam atuazlizados
-
     }
     void desabilitarButtons(){
         testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
         testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
         testeBotaoDireitos = testeBotaoDeActionPequenoCiclo_1 = testeBotaoDeActionPequenoCiclo_2 =false;
+        testeBotaoDeActionPequenoCiclo_2 = false;
     }
-    
+     
+    void testeDasAnimacoes(){
+      if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false){
+        animacoes_chuva = true;
+      }else if(animacoes_chuva == true ){
+        animacoes_chuva = false;
+      }
+    }
     
 }
