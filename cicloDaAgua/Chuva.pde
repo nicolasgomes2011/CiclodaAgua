@@ -13,7 +13,7 @@ class Chuva{
 
   void cria() {
     stroke(0, 0, 255);
-    line(chuvaPosicaoX, chuvaPosicaoY, chuvaPosicaoX, chuvaPosicaoY+1);
+    line(chuvaPosicaoX, chuvaPosicaoY, chuvaPosicaoX, chuvaPosicaoY+10);
   } 
  
   void chover(){

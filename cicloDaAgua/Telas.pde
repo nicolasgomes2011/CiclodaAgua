@@ -1,7 +1,8 @@
+
 class Telas {
   Chuva[] animacao = new Chuva[500];
-  public Telas(){
-    for(int i = 0;i<animacao.length;i++){
+  public Telas() {
+    for (int i = 0; i<animacao.length; i++) {
       animacao[i] = new Chuva();
     }
   }
@@ -28,6 +29,7 @@ class Telas {
   }
   //configurações da tela do menu
   public void menu() {
+
     imagemASerExibida("imagens/1.png");//configurando a imagem do menu
     if (testeBotaoInicio) {//caso o mouse esteja sobre o botão inicio a opacidade dele será alterada
       opacidade(958, 61, 175, 63);
@@ -50,21 +52,23 @@ class Telas {
 
   void pequenoCiclo() {//tela do pequeno ciclo
     imagemASerExibida("imagens/pequeno_ciclo.png");
-    
+
     buttonsAction(320, 300, 45, 45, testeBotaoDeActionPequenoCiclo_1);//criando os botões das animações
     buttonsAction(820, 490, 45, 45, testeBotaoDeActionPequenoCiclo_2);
 
     if (testeBotaoDeVoltarPequenoCiclo) {
       opacidade(84, 18, 264, 75);
     }
-    
-    if(animacoes_chuva){
-      for(int i = 0;i<animacao.length;i++){
-         animacao[i].chover();
+
+    if (animacoes_chuva) {
+      for (int i = 0; i<animacao.length; i++) {
+        animacao[i].chover();
       }
+      player.play();
+    }else{
+    player.pause();
     }
-    
-  }
+  }  
 
   void grandeCiclo() {
     imagemASerExibida("imagens/grande_ciclo.png");
