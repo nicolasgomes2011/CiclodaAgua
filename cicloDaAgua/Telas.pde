@@ -1,18 +1,13 @@
 
 class Telas {
-  Chuva[] animacao = new Chuva[500];
-  public Telas() {
-    for (int i = 0; i<animacao.length; i++) {
-      animacao[i] = new Chuva();
-    }
-  }
+  
   void buttonsAction(float posX, float posY, float width_, float height_, boolean status) {
     //criando os botões de animação
     fill(#675456);
     ellipse(posX, posY, width_, height_);
     if (status) {
       fill(#86010C);
-    } else {
+    }else {
       fill(#FF0318);
     }
     ellipse(posX, posY, width_-10, height_-10);
@@ -60,14 +55,7 @@ class Telas {
       opacidade(84, 18, 264, 75);
     }
 
-    if (animacoes_chuva) {
-      for (int i = 0; i<animacao.length; i++) {
-        animacao[i].chover();
-      }
-      player.play();
-    }else{
-    player.pause();
-    }
+    
   }  
 
   void grandeCiclo() {

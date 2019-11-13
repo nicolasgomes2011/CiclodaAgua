@@ -102,7 +102,7 @@ class Verificacao{
             alteracaoTelas = 1;//seta 1 para que volte para a escolha
         }else if(testeBotaoDeVoltarGrandeCiclo){
             alteracaoTelas =1 ;//seta 1 para que volte para a esolha
-            print(testeBotaoDeVoltarGrandeCiclo);
+            
         }else if(testeBotaoDeVoltarEscolha){
             alteracaoTelas = 0;
         }else if(testeBotaoDeVoltarSobre){
@@ -121,8 +121,13 @@ class Verificacao{
     void testeDasAnimacoes(){
       if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false){
         animacoes_chuva = true;
-      }else if(animacoes_chuva == true ){
+      }else if(testeBotaoDeActionPequenoCiclo_2 && animacoes_evaporacao == false){
+        animacoes_evaporacao = true;
+      }else if(animacoes_chuva){
         animacoes_chuva = false;
+      }
+      else if(animacoes_evaporacao){
+        animacoes_evaporacao = false;
       }
     }
     
