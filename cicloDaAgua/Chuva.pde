@@ -13,7 +13,8 @@ class Chuva {
 
   void cria() {
     stroke(0, 0, 255);
-    line(chuvaPosicaoX, chuvaPosicaoY, chuvaPosicaoX, chuvaPosicaoY+10);tr    
+    line(chuvaPosicaoX, chuvaPosicaoY, chuvaPosicaoX, chuvaPosicaoY+10); 
+    noStroke();
   } 
 
   void chover() {
@@ -41,5 +42,13 @@ class Chuva {
   void evaporar() {
     criar_evaporacao();
     subir();
+  }
+  
+  void animacaoChoverEvaporar(String animacao){
+    if(animacao == "chover"){
+      chover();
+    }else if(animacao == "evaporar"){
+      evaporar();
+    }
   }
 }

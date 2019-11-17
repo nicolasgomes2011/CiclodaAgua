@@ -32,14 +32,10 @@ void draw() {
   verificacaoBotoes.definirTelas();
 
   if (animacoes_chuva) {
-    for (int i = 0; i<animacao.length; i++) {
-      animacao[i].chover();
-    }
+    animacaoASerMostrada("chover");
     player.play();
   }else if(animacoes_evaporacao){
-    for (int i = 0; i<animacao.length; i++) {
-      animacao[i].evaporar();
-    } 
+   animacaoASerMostrada("evaporar");
   }else {
     player.pause();
   }
@@ -47,4 +43,10 @@ void draw() {
 
 void mousePressed() {
   verificacaoBotoes.testeMouseClicado();
+}
+
+void animacaoASerMostrada(String animacaoChoverOuEvaporar){
+  for (int i = 0; i<animacao.length; i++) {
+      animacao[i].animacaoChoverEvaporar(animacaoChoverOuEvaporar);
+    }
 }
