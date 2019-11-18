@@ -115,13 +115,14 @@ class Verificacao{
         testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
         testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
         testeBotaoDireitos = testeBotaoDeActionPequenoCiclo_1 = testeBotaoDeActionPequenoCiclo_2 =false;
-        testeBotaoDeActionPequenoCiclo_2 = false;
+        testeBotaoDeVoltarSobre = false;
+        
     }
      
     void testeDasAnimacoes(){
-      if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false){
+      if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false && alteracaoTelas == 2){
         animacoes_chuva = true;
-      }else if(testeBotaoDeActionPequenoCiclo_2 && animacoes_evaporacao == false){
+      }else if(testeBotaoDeActionPequenoCiclo_2 && animacoes_evaporacao == false && alteracaoTelas == 2){
         animacoes_evaporacao = true;
       }else if(animacoes_chuva){
         animacoes_chuva = false;
