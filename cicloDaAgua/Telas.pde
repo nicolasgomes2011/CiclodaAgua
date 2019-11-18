@@ -72,4 +72,11 @@ class Telas {
       opacidade(105, 37, 174, 63);
     }
   }
+  
+  void direitos(){
+    imagemASerExibida("imagens/direitos.JPG");
+    if (testeBotaoDeVoltarDireitos) {
+      opacidade(105, 37, 174, 63);
+    }
+  }
 }

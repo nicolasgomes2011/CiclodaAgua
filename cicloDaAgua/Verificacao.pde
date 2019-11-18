@@ -65,12 +65,14 @@ class Verificacao{
           testeBotaoDeActionPequenoCiclo_2 = true;
           cursor(HAND);
         
-        
+        }else if(testeLogicoDosBotoes(105,36,174,67)){
+          testeBotaoDeVoltarDireitos=true;
+          cursor(HAND);
         }else{
             desabilitarButtons();
             cursor(ARROW);
         }
-        //println("TELA: " + alteracaoTelas + " mouseX: "+ mouseX + " mouseY: " + mouseY);
+      
 
     }
 
@@ -86,27 +88,30 @@ class Verificacao{
         }else if(alteracaoTelas ==4){
             telasCiclos.sobre();
 
+        }else if(alteracaoTelas ==5){
+          telasCiclos.direitos();
         }
     }
 
     void testeMouseClicado(){//metodo chamando quando o mouse é clicado
-        if(testeBotaoInicio){//se o mouse for clicado  e estiver sobre o botão de inicio ocorrera uma alteração para a tela do pequeno ciclo
+        if(testeBotaoInicio || testeBotaoDeVoltarPequenoCiclo || testeBotaoDeVoltarGrandeCiclo ){//se o mouse for clicado  e estiver sobre o botão de inicio ocorrera uma alteração para a tela do pequeno ciclo
             alteracaoTelas = 1;
+        
         }else if(testeBotaoSobre){
             alteracaoTelas = 4;//4 será o valor para que a tela de sobre seja mostrado
+        
         }else if(testeBotaoPequenoCilco){
             alteracaoTelas = 2; 
+        
         }else if(testeBotaoGrandeCiclo){
             alteracaoTelas = 3;
-        }else if(testeBotaoDeVoltarPequenoCiclo){
-            alteracaoTelas = 1;//seta 1 para que volte para a escolha
-        }else if(testeBotaoDeVoltarGrandeCiclo){
-            alteracaoTelas =1 ;//seta 1 para que volte para a esolha
-            
-        }else if(testeBotaoDeVoltarEscolha){
+         
+        }else if(testeBotaoDeVoltarEscolha||testeBotaoDeVoltarSobre ||testeBotaoDeVoltarDireitos){
             alteracaoTelas = 0;
-        }else if(testeBotaoDeVoltarSobre){
-            alteracaoTelas = 0;
+        
+        }else if(testeBotaoDireitos){
+            alteracaoTelas = 5;
+        
         }
         testeDasAnimacoes();
         desabilitarButtons();//essa parte deve ficar para que cada atualização de click do mouse os botões sejam atuazlizados
@@ -115,15 +120,17 @@ class Verificacao{
         testeBotaoInicio = testeBotaoSobre = testeBotaoPequenoCilco = testeBotaoGrandeCiclo = false;
         testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
         testeBotaoDireitos = testeBotaoDeActionPequenoCiclo_1 = testeBotaoDeActionPequenoCiclo_2 =false;
-        testeBotaoDeVoltarSobre = false;
+        testeBotaoDeVoltarSobre =testeBotaoDeVoltarDireitos= false;
         
     }
      
     void testeDasAnimacoes(){
       if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false && alteracaoTelas == 2){
         animacoes_chuva = true;
+        animacoes_evaporacao = false;
       }else if(testeBotaoDeActionPequenoCiclo_2 && animacoes_evaporacao == false && alteracaoTelas == 2){
         animacoes_evaporacao = true;
+        animacoes_chuva = false;
       }else if(animacoes_chuva){
         animacoes_chuva = false;
       }
