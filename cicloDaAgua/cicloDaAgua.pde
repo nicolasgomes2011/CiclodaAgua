@@ -28,8 +28,7 @@ void setup() {
 }
 
 void draw() {
-  println("teste botão: " + testeBotaoGrandeCiclo_2);
-
+  
   verificacaoBotoes.atualizarPosicaoMouse();
   verificacaoBotoes.definirTelas();
 
@@ -38,6 +37,7 @@ void draw() {
     player.play();
   } else if (animacoes_evaporacao) {
     animacaoASerMostrada("evaporar");
+    player.pause();
   } else {
     player.pause();
   }

@@ -36,7 +36,7 @@ class Chuva {
 
   void criar_evaporacao() {
     fill(#FFFFFF);
-    ellipse(posicaoEmX, posicaoEmY, 10, 10);
+    line(chuvaPosicaoX, chuvaPosicaoY, chuvaPosicaoX, chuvaPosicaoY+10); 
   }
 
   void evaporar() {
