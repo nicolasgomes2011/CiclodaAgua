@@ -9,7 +9,7 @@ boolean testeBotaoInicio, testeBotaoSobre, testeBotaoDireitos;//que guardam o es
 boolean testeBotaoPequenoCilco, testeBotaoGrandeCiclo;//guardam o estado do botão quando o mouse está sobre alguma das opções
 boolean testeBotaoDeVoltarPequenoCiclo, testeBotaoDeVoltarGrandeCiclo, testeBotaoDeVoltarEscolha;//guarda o estado do botão caso o mouse esteja sobre ele 
 boolean testeBotaoDeVoltarSobre, testeBotaoDeVoltarDireitos;//estado do botão de voltar da tela sobre
-boolean testeBotaoDeActionPequenoCiclo_1, testeBotaoDeActionPequenoCiclo_2,testeBotaoGrandeCiclo_1,testeBotaoGrandeCiclo_2,testeBotao3;
+boolean testeBotaoDeActionPequenoCiclo_1, testeBotaoDeActionPequenoCiclo_2,testeBotaoCicloGrande_1,testeBotaoCicloGrande_2;
 boolean animacoes_chuva, animacoes_evaporacao;
 int alteracaoTelas;//variavel responsavel pela alteração das telas 
 Minim minim;
@@ -27,7 +27,8 @@ void setup() {
 }
 
 void draw() {
-print(testeBotaoGrandeCiclo_1);
+  println("mouseX: + " + alteracaoTelas);
+  println("moueY: + " + mouseY);
   verificacaoBotoes.atualizarPosicaoMouse();
   verificacaoBotoes.definirTelas();
 
@@ -42,7 +43,7 @@ print(testeBotaoGrandeCiclo_1);
 }
 
 void mousePressed() {
-  verificacaoBotoes.testeMouseClicado();
+ verificacaoBotoes.testeMouseClicado();
 }
 
 void animacaoASerMostrada(String animacaoChoverOuEvaporar){

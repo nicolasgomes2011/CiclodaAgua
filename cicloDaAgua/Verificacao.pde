@@ -68,6 +68,15 @@ class Verificacao{
         }else if(testeLogicoDosBotoes(105,36,174,67)){
           testeBotaoDeVoltarDireitos=true;
           cursor(HAND);
+        }else if(testeLogicoEllipseButtons(150,290,45)&& alteracaoTelas == 3){
+        testeBotao3 = true;
+        cursor(HAND);
+        }else if(testeLogicoEllipseButtons(765,485,45)&& alteracaoTelas == 3){
+        testeBotaoGrandeCiclo_2 = true;
+        cursor(HAND);
+        }else if(testeLogicoEllipseButtons(310,590,45)&& alteracaoTelas == 3){
+        testeBotaoGrandeCiclo_1 = true;
+        cursor(HAND);
         }else{
             desabilitarButtons();
             cursor(ARROW);
@@ -121,11 +130,15 @@ class Verificacao{
         testeBotaoDeVoltarPequenoCiclo = testeBotaoDeVoltarGrandeCiclo = testeBotaoDeVoltarEscolha  =false;
         testeBotaoDireitos = testeBotaoDeActionPequenoCiclo_1 = testeBotaoDeActionPequenoCiclo_2 =false;
         testeBotaoDeVoltarSobre =testeBotaoDeVoltarDireitos= false;
+        testeBotaoGrandeCiclo_1 = false;
+        testeBotaoGrandeCiclo_2 = false;
+        testeBotao3 = false;
+        
         
     }
      
     void testeDasAnimacoes(){
-      if(testeBotaoDeActionPequenoCiclo_1 && animacoes_chuva == false && alteracaoTelas == 2){
+      if(testeBotaoDeActionPequenoCiclo_1 && !animacoes_chuva && alteracaoTelas == 2){
         animacoes_chuva = true;
         animacoes_evaporacao = false;
       }else if(testeBotaoDeActionPequenoCiclo_2 && animacoes_evaporacao == false && alteracaoTelas == 2){

@@ -1,13 +1,13 @@
 
 class Telas {
-  
+
   void buttonsAction(float posX, float posY, float width_, float height_, boolean status) {
     //criando os botões de animação
     fill(#675456);
     ellipse(posX, posY, width_, height_);
     if (status) {
       fill(#86010C);
-    }else {
+    } else {
       fill(#FF0318);
     }
     ellipse(posX, posY, width_-10, height_-10);
@@ -54,13 +54,13 @@ class Telas {
     if (testeBotaoDeVoltarPequenoCiclo) {
       opacidade(84, 18, 264, 75);
     }
-
-    
   }  
 
   void grandeCiclo() {
     imagemASerExibida("imagens/grande_ciclo.png");
-
+    buttonsAction(310, 590, 45, 45, testeBotaoGrandeCiclo_1);//criando os botões das animaçõest
+    buttonsAction(765, 485, 45, 45, testeBotaoGrandeCiclo_2);//
+    buttonsAction(150, 290, 45, 45, testeBotao3);//
     if (testeBotaoDeVoltarGrandeCiclo) {
       opacidade(80, 28, 223, 64);
     }
@@ -72,8 +72,8 @@ class Telas {
       opacidade(105, 37, 174, 63);
     }
   }
-  
-  void direitos(){
+
+  void direitos() {
     imagemASerExibida("imagens/direitos.JPG");
     if (testeBotaoDeVoltarDireitos) {
       opacidade(105, 37, 174, 63);
