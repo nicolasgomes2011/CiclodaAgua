@@ -58,8 +58,8 @@ class Telas {
 
   void grandeCiclo() {
     imagemASerExibida("imagens/grande_ciclo.png");
-    buttonsAction(310, 590, 45, 45, testeBotaoGrandeCiclo_1);//criando os botões das animaçõest
-    buttonsAction(765, 485, 45, 45, testeBotaoGrandeCiclo_2);//
+    buttonsAction(310, 590, 45, 45, testeBotaoGrandeCiclo_1);
+    buttonsAction(765, 485, 45, 45, testeBotaoGrandeCiclo_2);
     buttonsAction(150, 290, 45, 45, testeBotao3);//
     if (testeBotaoDeVoltarGrandeCiclo) {
       opacidade(80, 28, 223, 64);

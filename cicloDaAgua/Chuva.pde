@@ -3,11 +3,11 @@ class Chuva {
   float chuvaPosicaoY = random(280, 550 );
   float velocidadeEmY = random(15, 20);
 
-  void cair() {
+  void cair(int posicaoInicialY,int posicaoFInalY, int velocidadeInicialY, int velocidadeFinalY) {
     chuvaPosicaoY += velocidadeEmY;
     if (chuvaPosicaoY>550) {
-      chuvaPosicaoY = random(280, 550);
-      velocidadeEmY = random(15, 20);
+      chuvaPosicaoY = random(posicaoInicialY, posicaoFInalY); // 280, 550
+      velocidadeEmY = random(velocidadeInicialY, velocidadeFinalY); // 15, 20
     }
   }
 
@@ -19,7 +19,7 @@ class Chuva {
 
   void chover() {
     cria();
-    cair();
+    cair(280,550,15, 20);
   }
 
   float posicaoEmX = random(380, 870);

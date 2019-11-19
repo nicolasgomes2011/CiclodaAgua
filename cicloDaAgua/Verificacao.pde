@@ -149,7 +149,13 @@ class Verificacao{
       }
       else if(animacoes_evaporacao){
         animacoes_evaporacao = false;
-      }
+      }else if(testeBotao3 && !animacoes_chuva && alteracaoTelas == 3){
+        animacoes_chuva = true;
+        animacoes_evaporacao = false;
+      }else if (testeBotaoGrandeCiclo_2 && !animacoes_evaporacao && alteracaoTelas == 3){
+      animacoes_chuva = false;
+      animacoes_evaporacao = true;  
+  }
     }
     
 }
