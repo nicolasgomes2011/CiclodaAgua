@@ -2,17 +2,17 @@
 class Telas {
   void explicacao(){
     if(explicacao1){
-      opacidade(0,0,1200,600);
+      opacidade(0,0,1200,650);
       PImage imagem = loadImage("imagens/explicação_chuva.png");
       image(imagem, 400,100, 400, 400);
       animacoes_evaporacao = animacoes_chuva = false;
     }else if(explicacao2){
-      opacidade(0,0,1200,600);
+      opacidade(0,0,1200,650);
       PImage imagem = loadImage("imagens/explicação_evaporação.png");
       image(imagem, 400,100, 400, 400);
       animacoes_evaporacao = animacoes_chuva = false;
     }else if(explicacao3){
-      opacidade(0,0,1200,600);
+      opacidade(0,0,1250,650);
       PImage imagem = loadImage("imagens/explicação_grande_ciclo.png");
       image(imagem, 400,100, 400, 400);
       animacoes_evaporacao = animacoes_chuva = false;
@@ -99,7 +99,7 @@ class Telas {
     
     buttonsExplicacao(200, 290, 35, 35, testeExplicacao_1Gc );
     buttonsExplicacao(715, 485, 35, 35,  testeExplicacao_2Gc );
-
+    explicacao();
     if (testeBotaoDeVoltarGrandeCiclo) {
       opacidade(80, 28, 223, 64);
     }

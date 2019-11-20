@@ -71,7 +71,7 @@ class Verificacao{
           testeBotaoDeVoltarDireitos=true;
           cursor(HAND);
         }else if(testeLogicoEllipseButtons(150,290,45)&& alteracaoTelas == 3){
-        testeBotao3 = true;
+         testeBotao3 = true;
         testeExplicacao_1Gc = false;
         cursor(HAND);
         }else if(testeLogicoEllipseButtons(765,485,45)&& alteracaoTelas == 3){
@@ -187,14 +187,15 @@ class Verificacao{
         explicacao1 = true;
       }else if(testeBotaoDeExplicacao_2Pc||testeExplicacao_2Gc){
         explicacao2 = true;
-      } else if(!testeBotaoDeExplicacao_1Pc ||!testeBotaoDeExplicacao_2Pc ||!testeExplicacao_1Gc||!testeExplicacao_1Gc||!testeBotao3){
+      }else if(testeBotaoGrandeCiclo_1){
+        explicacao3 = true; 
+      }else if(!testeBotaoDeExplicacao_1Pc ||!testeBotaoDeExplicacao_2Pc ||!testeExplicacao_1Gc||!testeExplicacao_1Gc||!testeBotao3){
         explicacao1 = false;
         explicacao2 = false;
         explicacao3 = false;
-        
-      }else if(testeBotao3){
-        explicacao3 = true;
       }
+     
+      
     }
     
 }

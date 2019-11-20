@@ -27,10 +27,11 @@ void setup() {
     animacao[i] = new Chuva();
     animacaoGrande[i] = new ChuvaGrande();
   }
+  println(explicacao3);
 }
 
 void draw() {
-  
+  println(explicacao3);
   verificacaoBotoes.atualizarPosicaoMouse();
   verificacaoBotoes.definirTelas();
 
