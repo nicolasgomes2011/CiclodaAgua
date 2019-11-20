@@ -11,6 +11,8 @@ boolean testeBotaoDeVoltarPequenoCiclo, testeBotaoDeVoltarGrandeCiclo, testeBota
 boolean testeBotaoDeVoltarSobre, testeBotaoDeVoltarDireitos;//estado do botão de voltar da tela sobre
 boolean testeBotaoDeActionPequenoCiclo_1, testeBotaoDeActionPequenoCiclo_2, testeBotaoGrandeCiclo_1, testeBotaoGrandeCiclo_2, testeBotao3;
 boolean animacoes_chuva, animacoes_evaporacao;
+boolean testeBotaoDeExplicacao_1Pc,testeBotaoDeExplicacao_2Pc,explicacao1,explicacao2,explicacao3;
+boolean testeExplicacao_1Gc,testeExplicacao_2Gc,testeExplicacao_3Gc;
 int alteracaoTelas;//variavel responsavel pela alteração das telas 
 Minim minim;
 AudioPlayer player;

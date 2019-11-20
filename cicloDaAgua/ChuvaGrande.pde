@@ -4,7 +4,7 @@ class ChuvaGrande extends Chuva {
   float chuvaPosicaoY = random(280, 550 );
   float velocidadeEmY = random(15, 20);
   float posicaoEmX = random(209, 592);
-  float posicaoEmY = random(280, 550 );
+  float posicaoEmY = random(280, 580 );
   float velocidadeDeSubida = random(10, 15);
   
   void cair(int posicaoInicialY,int posicaoFinalY, int velocidadeInicialY, int velocidadeFinalY) {
@@ -32,13 +32,14 @@ class ChuvaGrande extends Chuva {
     posicaoEmY -= velocidadeDeSubida;
     if (posicaoEmY <200) {
       velocidadeDeSubida = random(10, 15);
-      posicaoEmY = random(300, 500);
+      posicaoEmY = random(300, 580);
     }
   }
 
   void criar_evaporacao() {
-    fill(#FFFFFF);
-    ellipse(posicaoEmX, posicaoEmY, 10, 10);
+    stroke(255, 255, 255);
+    line(posicaoEmX , posicaoEmY,posicaoEmX , posicaoEmY+10);
+    noStroke();
   }
 
   void evaporar() {

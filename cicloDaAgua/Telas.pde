@@ -1,6 +1,24 @@
 
 class Telas {
-
+  void explicacao(){
+    if(explicacao1){
+      opacidade(0,0,1200,600);
+      PImage imagem = loadImage("imagens/explicação_chuva.png");
+      image(imagem, 400,100, 400, 400);
+      animacoes_evaporacao = animacoes_chuva = false;
+    }else if(explicacao2){
+      opacidade(0,0,1200,600);
+      PImage imagem = loadImage("imagens/explicação_evaporação.png");
+      image(imagem, 400,100, 400, 400);
+      animacoes_evaporacao = animacoes_chuva = false;
+    }else if(explicacao3){
+      opacidade(0,0,1200,600);
+      PImage imagem = loadImage("imagens/explicação_grande_ciclo.png");
+      image(imagem, 400,100, 400, 400);
+      animacoes_evaporacao = animacoes_chuva = false;
+    }
+  } 
+  
   void buttonsAction(float posX, float posY, float width_, float height_, boolean status) {
     //criando os botões de animação
     fill(#675456);
@@ -9,6 +27,17 @@ class Telas {
       fill(#86010C);
     } else {
       fill(#FF0318);
+    }
+    ellipse(posX, posY, width_-10, height_-10);
+  }
+  
+  void buttonsExplicacao(float posX, float posY, float width_, float height_, boolean status){
+    fill(#675456);
+    ellipse(posX, posY, width_, height_);
+    if (status) {
+      fill(#055512);
+    } else {
+      fill(#08FA2D);
     }
     ellipse(posX, posY, width_-10, height_-10);
   }
@@ -50,7 +79,12 @@ class Telas {
 
     buttonsAction(320, 300, 45, 45, testeBotaoDeActionPequenoCiclo_1);//criando os botões das animações
     buttonsAction(820, 490, 45, 45, testeBotaoDeActionPequenoCiclo_2);
-
+    
+    buttonsExplicacao(270, 300, 35, 35, testeBotaoDeExplicacao_1Pc );
+    buttonsExplicacao(770, 490, 35, 35, testeBotaoDeExplicacao_2Pc );
+    
+    explicacao();
+    
     if (testeBotaoDeVoltarPequenoCiclo) {
       opacidade(84, 18, 264, 75);
     }
@@ -58,9 +92,14 @@ class Telas {
 
   void grandeCiclo() {
     imagemASerExibida("imagens/grande_ciclo.png");
-    buttonsAction(310, 590, 45, 45, testeBotaoGrandeCiclo_1);
+    buttonsExplicacao(310, 590, 45, 45, testeBotaoGrandeCiclo_1);
+    
     buttonsAction(765, 485, 45, 45, testeBotaoGrandeCiclo_2);
     buttonsAction(150, 290, 45, 45, testeBotao3);//
+    
+    buttonsExplicacao(200, 290, 35, 35, testeExplicacao_1Gc );
+    buttonsExplicacao(715, 485, 35, 35,  testeExplicacao_2Gc );
+
     if (testeBotaoDeVoltarGrandeCiclo) {
       opacidade(80, 28, 223, 64);
     }
