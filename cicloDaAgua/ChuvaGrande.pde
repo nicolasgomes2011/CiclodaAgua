@@ -37,7 +37,7 @@ class ChuvaGrande extends Chuva {
   }
 
   void criar_evaporacao() {
-    stroke(255, 255, 255);
+    stroke(#747474);
     line(posicaoEmX , posicaoEmY,posicaoEmX , posicaoEmY+10);
     noStroke();
   }

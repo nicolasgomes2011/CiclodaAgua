@@ -13,7 +13,7 @@ class Telas {
       animacoes_evaporacao = animacoes_chuva = false;
     }else if(explicacao3){
       opacidade(0,0,1250,650);
-      PImage imagem = loadImage("imagens/explicação_grande_ciclo.png");
+      PImage imagem = loadImage("imagens/ExplicacaoAnimais.png");
       image(imagem, 400,100, 400, 400);
       animacoes_evaporacao = animacoes_chuva = false;
     }
